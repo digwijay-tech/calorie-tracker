@@ -1,0 +1,7 @@
+export const Substraction = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" height="16px" width="24px" viewBox="0 -960 960 960">
+      <path d="M232-444v-72h496v72H232Z" />
+    </svg>
+  );
+};
