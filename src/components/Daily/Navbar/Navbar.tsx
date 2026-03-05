@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { CalenderSvg } from "../../../assets/svg/CalenderSvg";
-import logo from "../../assets/logo/logo.png"
+import logo from "../../../assets/logo/logo.png"
 const Navbar = () => {
   return (
     <div className="flex py-4 bg-gray-100">

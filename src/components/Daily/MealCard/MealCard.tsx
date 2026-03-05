@@ -1,4 +1,5 @@
-import { ScheduleIcon } from "../../assets/svg/ScheduleIcon";
+import { ScheduleIcon } from "../../../assets/svg/ScheduleIcon";
+
 type mealCardprops ={
   mealType : String,
   mealCalorie : number,

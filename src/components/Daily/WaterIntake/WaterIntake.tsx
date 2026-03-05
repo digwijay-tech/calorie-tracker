@@ -1,5 +1,6 @@
-import { Addition } from "../../assets/svg/Addition";
-import { Substraction } from "../../assets/svg/Substraction";
+import { Addition } from "../../../assets/svg/Addition";
+import { Substraction } from "../../../assets/svg/Substraction";
+
 
 const WaterIntake = () => {
   return (
