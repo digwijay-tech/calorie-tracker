@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
-
-import Home from "./pages/Home";
+import BottomNavBar from "./components/BottomNavBar/BottomNavBar";
+import DailyPage from "./pages/DailyPage";
 
 const App = () => {
   return (
     <div className="bg-gray-200">
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<DailyPage />} />
       </Routes>
-      
+      <BottomNavBar />
     </div>
   );
 };

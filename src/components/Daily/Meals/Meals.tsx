@@ -1,4 +1,5 @@
-import { Addition } from "../../assets/svg/Addition";
+
+import { Addition } from "../../../assets/svg/Addition";
 import MealCard from "../MealCard/MealCard";
 
 const Meals = () => {

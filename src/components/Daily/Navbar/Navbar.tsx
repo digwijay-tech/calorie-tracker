@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CalenderSvg } from "../../assets/svg/CalenderSvg";
+import { CalenderSvg } from "../../../assets/svg/CalenderSvg";
 import logo from "../../assets/logo/logo.png"
 const Navbar = () => {
   return (
