@@ -11,8 +11,8 @@ const BottomNavBar = () => {
   const [activeTab, setActiveTab] = useState("Daily");
 
   return (
-    <div className=" fixed px-3.25 pb-1.5 bg-white bottom-0 w-full min-[425px]:w-112.5">
-      <div className="flex px-2 justify-between  bg-[#DBFBED] rounded-md">
+    <div className=" fixed px-3.25 pb-1.5 flex  bottom-0 w-full ">
+      <div className="flex px-2 justify-between  bg-[#DBFBED] rounded-md min-[425px]:w-112.5 mx-auto">
         {navItems.map((item, i) => (
           <Link
             to={item.path}

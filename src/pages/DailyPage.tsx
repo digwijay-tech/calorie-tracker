@@ -4,6 +4,7 @@ import NutrientIndicator from '../components/Daily/NutrientIndicator/NutrientInd
 import WaterIntake from '../components/Daily/WaterIntake/WaterIntake'
 
 const DailyPage = () => {
+  
   return (
     <div className=" w-auto min-[425px]:w-112.5 mx-auto bg-white ">
         <Navbar/>
