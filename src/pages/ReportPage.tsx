@@ -1,7 +1,7 @@
 
 const ReportPage = () => {
   return (
-    <div>ReportPage</div>
+    <div className="h-full">ReportPage</div>
   )
 }
 

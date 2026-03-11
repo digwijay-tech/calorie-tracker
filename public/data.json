@@ -1,0 +1,38 @@
+[
+  {
+    "username": "john123",
+    "password": "john@123",
+    "userDetails": {
+      "id": 1,
+      "name": "John Mathew",
+      "email": "john@example.com",
+      "phone": "9876543210"
+    },
+    "profile": {
+      "age": 28,
+      "gender": "male",
+      "height": 175,
+      "weight": 72,
+      "goal": "muscle gain",
+      "activityLevel": "Active"
+    }
+  },
+  {
+    "username": "jenni",
+    "password": "jen@123",
+    "userDetails": {
+      "id": 1,
+      "name": "jenni thomos",
+      "email": "jenni@example.com",
+      "phone": "99988776655"
+    },
+    "profile": {
+      "age": 28,
+      "gender": "female",
+      "height": 140,
+      "weight": 55,
+      "goal": "maintain",
+      "activityLevel": "moderate"
+    }
+  }
+]
