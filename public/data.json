@@ -14,14 +14,14 @@
       "height": 175,
       "weight": 72,
       "goal": "muscle gain",
-      "activityLevel": "Active"
+      "activityLevel": "active"
     }
   },
   {
     "username": "jenni",
     "password": "jen@123",
     "userDetails": {
-      "id": 1,
+      "id": 2,
       "name": "jenni thomos",
       "email": "jenni@example.com",
       "phone": "99988776655"
