@@ -1,16 +1,23 @@
+import { useContext } from "react";
 import { useCalorieCalc } from "../../../Hooks/useCalorieCalc";
 import { useMacroCalc } from "../../../Hooks/useMacroCalc";
 // import { useCarbsCalc } from "../../../Hooks/useCarbsCalc";
 // import { useFatCalc } from "../../../Hooks/useFatCalc";
 // import { UseProtienCalc } from "../../../Hooks/UseProtienCalc";
 import { useUser } from "../../../Hooks/useUser";
+import { MacroContext } from "../../../context/MacroContext";
 
 const NutrientIndicator = () => {
   const USERDETAILS = useUser();
   const DAILYCALORIES = useCalorieCalc(USERDETAILS?.profile);
   console.log(USERDETAILS?.profile);
-  
-  const MACRO = useMacroCalc(USERDETAILS?.profile.weight ?? 0 , DAILYCALORIES ?? 0)
+  const DailyMacro = useContext(MacroContext);
+  if (!DailyMacro) return undefined;
+  const { dailyFat, dailyProtein, dailyCarbs, dailyCalorie } = DailyMacro;
+  const MACRO = useMacroCalc(
+    USERDETAILS?.profile.weight ?? 0,
+    DAILYCALORIES ?? 0,
+  );
   // const PROTEIN = UseProtienCalc(DAILYCALORIES ?? 0);
   // const FAT = useFatCalc(DAILYCALORIES ?? 0);
   // const CARBS = useCarbsCalc(DAILYCALORIES ?? 0);
@@ -24,7 +31,9 @@ const NutrientIndicator = () => {
       <div className="flex flex-col gap-5 bg-[#F7F7F7] px-2  py-2.5 rounded text-[12px]">
         <div className="flex  justify-between gap-2">
           <div className="flex flex-col w-full items-center">
-            <div>150 / {MACRO.protein}</div>
+            <div>
+              {dailyProtein} / {MACRO.protein}
+            </div>
             <div className="w-full px-1">
               <div className="w-full  bg-gray-300 h-1.25 rounded mb-0.5 overflow-hidden">
                 <div
@@ -37,7 +46,9 @@ const NutrientIndicator = () => {
             <span className="text-[14px]">Proteins</span>
           </div>
           <div className="flex flex-col w-full items-center">
-            <div>150 / {MACRO.fat}</div>
+            <div>
+              {dailyFat} / {MACRO.fat}
+            </div>
             <div className="w-full px-1">
               <div className="w-full  bg-gray-300 h-1.25 rounded mb-0.5 overflow-hidden">
                 <div
@@ -50,7 +61,9 @@ const NutrientIndicator = () => {
             <span className="text-[14px]">Fats</span>
           </div>
           <div className="flex flex-col w-full items-center">
-            <div>34 / {MACRO.carbs}</div>
+            <div>
+              {dailyCarbs} / {MACRO.carbs}
+            </div>
             <div className="w-full px-1">
               <div className="w-full  bg-gray-300 h-1.25 rounded mb-0.5 overflow-hidden">
                 <div
@@ -65,7 +78,7 @@ const NutrientIndicator = () => {
         </div>
 
         <div className="flex flex-col w-full items-center">
-          <div>888 / {Math.round(DAILYCALORIES ?? 0)} </div>
+          <div>{dailyCalorie} / {Math.round(DAILYCALORIES ?? 0)} </div>
           <div className="w-full px-1">
             <div className="w-full  bg-gray-300 h-1.25 rounded mb-0.5 overflow-hidden">
               <div

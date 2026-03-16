@@ -30,6 +30,7 @@ type props = {
 };
 export const UserProvider = ({ children }: props) => {
   const [users, setUsers] = useState<userDataType[]>([]);
+  
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
