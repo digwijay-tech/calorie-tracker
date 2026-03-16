@@ -8,11 +8,16 @@ type userDetailsType = {
 };
 type userProfileType = {
   age: number;
-  gender: string;
+  gender: "male" | "female";
   height: number;
   weight: number;
-  goal: string;
-  activityLevel: string;
+  goal: "maintain" | "muscle gain" | "weight loss";
+  activityLevel:
+    | "sedentary"
+    | "lightly active"
+    | "moderately active"
+    | "active"
+    | "very active";
 };
 type userDataType = {
   username: string;
