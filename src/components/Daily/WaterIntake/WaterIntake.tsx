@@ -7,14 +7,26 @@ const WaterIntake = () => {
   const now = new Date();
   const [lastUpdatedTime, setLastUpdatedTime] = useState("");
   const [waterintake, setWaterIntake] = useState(0);
-  let waterpercentage = (waterintake /MAXWATERLIMIT)*100
+  let waterpercentage = Math.round((waterintake / MAXWATERLIMIT) * 100);
+  
+  // function to add the value in water intake 
   const AddWater = () => {
-    setWaterIntake((prev) => prev + 0.25);
+    if (waterintake === 3) {
+      return;
+    } else {
+      setWaterIntake((prev) => prev + 0.25);
+    }
+
     setLastUpdatedTime(now.toLocaleTimeString());
   };
 
+  // function to decrease the value from water intake
   const RemoveWater = () => {
-    setWaterIntake((prev) => prev - 0.25);
+    if (waterintake === 0) {
+      return;
+    } else {
+      setWaterIntake((prev) => prev - 0.25);
+    }
     setLastUpdatedTime(now.toLocaleTimeString());
   };
 
@@ -55,12 +67,13 @@ const WaterIntake = () => {
               <Substraction />
             </button>
           </div>
-          <div className="h-full w-10 bg-[#CCCCCC] rounded-full flex items-end overflow-hidden">
+          <div className="relative h-full w-10 bg-[#CCCCCC] rounded-full flex items-end overflow-hidden">
             <div
               className="w-full  bg-linear-to-b from-[#81DDFF] to-[#78ABFF] rounded-b-full"
               style={{ height: `${waterpercentage}%` }}
-            >
-              {/* <div className="relative top-9.5 left-2">{waterpercentage}%</div> */}
+            ></div>
+            <div className="absolute top-14.5  w-full text-center">
+              {waterpercentage}%
             </div>
           </div>
         </div>
