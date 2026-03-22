@@ -19,18 +19,27 @@ type userProfileType = {
     | "active"
     | "very active";
 };
+type UserMealType = {
+  mealType: string;
+  calorie: number;
+  time: string;
+  protein?: number;
+  fat?: number;
+  carbs?: number;
+};
 type userDataType = {
   username: string;
   password: string;
   userDetails: userDetailsType;
   profile: userProfileType;
+  meals: UserMealType[];
 };
 type props = {
   children: ReactNode;
 };
 export const UserProvider = ({ children }: props) => {
   const [users, setUsers] = useState<userDataType[]>([]);
-  
+
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())

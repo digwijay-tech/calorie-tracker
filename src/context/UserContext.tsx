@@ -18,11 +18,20 @@ type userProfileType = {
     | "active"
     | "very active";
 };
+type UserMealType = {
+  mealType: string;
+  calorie: number;
+  time: string;
+  protein?: number;
+  fat?: number;
+  carbs?: number;
+};
 type userDataType = {
   username: string;
   password: string;
   userDetails: userDetailsType;
   profile: userProfileType;
+  meals: UserMealType[];
 };
 
 export const UserContext = createContext<userDataType | undefined>(undefined);

@@ -1,24 +1,36 @@
 import { Link } from "react-router-dom";
 import { CalenderSvg } from "../../../assets/svg/CalenderSvg";
-import logo from "../../../assets/logo/logo.png"
+import logo from "../../../assets/logo/logo.png";
+import { useContext } from "react";
+import { DataSetContext } from "../../../context/DataSetContext";
+
 const Navbar = () => {
+  const CONTEXT = useContext(DataSetContext);
+  const today = new Date();
   return (
-    <div className="flex py-4 bg-gray-100">
-      <div className="flex px-5 w-full justify-between flex-row ">
-        {/* <Link className="flex items-center  gap-2" to="/Profile">
-          <div className="w-8 h-8 ">
-            <img src="/logo.png" alt="logo" className="h-full w-full object-cover rounded-full" />
-          </div>
-          <span className="leading-none">Sunju</span>
-        </Link> */}
-        <Link to='/'>
-        <img src={logo} alt="logo" className="h-auto w-37.5"/>
+    <div className=" flex bg-gray-100">
+      <div className="flex py-4 px-5 w-full justify-between flex-row ">
+        <Link to="/">
+          <img src={logo} alt="logo" className="h-auto w-37.5" />
         </Link>
 
-        <Link className="flex gap-2.5 items-center" to="/helo">
-          <span className="text-[14px]">Today</span>
+        <button
+          className="flex gap-2.5 items-center cursor-pointer"
+          onClick={() => {
+            CONTEXT?.setShowCalendar(!CONTEXT.showCalendar);
+            console.log("clickj");
+          }}
+        >
+          <span className="text-[14px] font-medium">
+            {today.toLocaleDateString() == CONTEXT?.date.toLocaleDateString()
+              ? "Today"
+              : CONTEXT?.date?.toLocaleDateString("en-US", {
+                  day: "2-digit",
+                  month: "short",
+                })}
+          </span>
           <CalenderSvg />
-        </Link>
+        </button>
       </div>
     </div>
   );

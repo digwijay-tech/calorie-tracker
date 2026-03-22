@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Addition } from "../../../assets/svg/Addition";
 import { Substraction } from "../../../assets/svg/Substraction";
+import { DataSetContext } from "../../../context/DataSetContext";
 
 const WaterIntake = () => {
   const MAXWATERLIMIT = 3;
   const now = new Date();
-  const [lastUpdatedTime, setLastUpdatedTime] = useState("");
-  const [waterintake, setWaterIntake] = useState(0);
+  const Context = useContext(DataSetContext);
+  if (!Context) {
+    return null;
+  }
+  const { waterintake, setWaterIntake, lastUpdatedTime, setLastUpdatedTime } =
+    Context;
   let waterpercentage = Math.round((waterintake / MAXWATERLIMIT) * 100);
-  
-  // function to add the value in water intake 
+
+  // function to add the value in water intake
   const AddWater = () => {
     if (waterintake === 3) {
       return;
@@ -41,7 +46,7 @@ const WaterIntake = () => {
             <h2>Water</h2>
             <h3>
               <span className="text-[16px] font-medium leading-5">
-                {waterintake}{" "}
+                {waterintake}
               </span>
               /{MAXWATERLIMIT}L
             </h3>

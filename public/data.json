@@ -15,7 +15,27 @@
       "weight": 68,
       "goal": "weight loss",
       "activityLevel": "active"
-    }
+    },
+    "meals": [
+      { 
+        "mealType": "BreakFast",
+         "calorie": 586,
+         "time": "10:30 AM",
+         "protein" : 25,
+         "carbs" :100,
+         "fat" : 22
+         
+      },
+      { 
+        "mealType": "Lunch",
+         "calorie": 264,
+         "time": "1:30 PM",
+         "protein" : 25,
+         "carbs" :100,
+         "fat" : 22
+         
+      }
+    ]
   },
   {
     "username": "jenni",
